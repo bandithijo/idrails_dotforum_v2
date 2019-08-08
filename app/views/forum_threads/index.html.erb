@@ -1,0 +1,20 @@
+<div class="row my-3">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="welcome-msg">
+      <h1>Welcome to dotForum!</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <hr>
+    </div>
+    <% @threads.each do |thread| %>
+    <div class="threads">
+      <h3><%= thread.title %></h3>
+      <span class="meta"><small><%= thread.created_at.strftime("%d %B %Y") %> oleh <%= thread.user.name %></small></span>
+      <p><%= truncate thread.content, length: 250 %></p>
+      <span><%= thread.forum_posts.count %> obrolan</span>
+      <hr>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-md-2"></div>
+</div>

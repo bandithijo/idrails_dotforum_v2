@@ -60,3 +60,9 @@
 
     - Add responsive meta tag [source](https://getbootstrap.com/docs/4.3/getting-started/introduction/#responsive-meta-tag)
         `<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">`
+
+10. Create Homepage
+    - Create controller home_controller.rb with action :index
+    - Create view home/index.html.erb
+    - Create route for home#index become to root_path
+
