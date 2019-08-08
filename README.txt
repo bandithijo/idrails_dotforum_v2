@@ -28,3 +28,20 @@
     - Add null: false every column
     - Run this migration
 
+7. Create realation between tables
+    - Users
+        ```
+        has_many :forum_threads
+        has_many :forum_posts
+        ```
+    - ForumThread
+        ```
+        belongs_to :user
+        has_many :forum_posts
+        ```
+    - ForumPost
+        ```
+        belongs_to :user
+        belongs_to :forum_thread
+        ```
+
