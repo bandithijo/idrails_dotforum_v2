@@ -16,9 +16,15 @@
     - Run `$ rake db:create`
     - Run migration `$ rake db:migrate`
 
-5. Create model for forum thread (with Rails generated)
-    `$ rails g model ForumThread title content:text sticky_order:integer user_id:integer`
+5. Create model for forum thread (with Rails generator)
+    - Generated with `$ rails g model ForumThread title content:text sticky_order:integer user_id:integer`
     - Add title limit 100 character
     - Add sticky_order default value 100
     - Add user_id null false
     - Run this migration
+
+6. Create model for forum post (with Rails generator)
+    - Generated with `$ rails g model ForumPost content:text forum_thread_id:integer user_id:integer`
+    - Add null: false every column
+    - Run this migration
+
