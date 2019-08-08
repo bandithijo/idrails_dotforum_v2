@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gem added by BanditHijo
 gem 'pry-rails'
+gem 'devise'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
