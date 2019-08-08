@@ -1,0 +1,24 @@
+<div class="thread-detail">
+  <h1><%= @thread.title %></h1>
+  <span class="meta"><small><%= I18n.l @thread.created_at.to_date %> oleh <%= @thread.user.name %></small></span>
+  <p><%= truncate @thread.content, length: 250 %></p>
+</div>
+<div class="comment">
+  <h3>Komentar</h3>
+  <% @thread.forum_posts.each do |post| %>
+  <div class="comment-list my-3">
+    <div class="row">
+      <div class="col-md-2 mb-2">
+        <%= image_tag 'profile-placeholder.png', class: 'img-fluid rounded' %>
+      </div>
+      <div class="col-md-3 border-right">
+        <b><%= post.user.name %></b><br>
+        <span><small><%= I18n.l post.created_at.to_date %></small></span>
+      </div>
+      <div class="col-md-7 pl-5">
+        <p><%= post.content %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

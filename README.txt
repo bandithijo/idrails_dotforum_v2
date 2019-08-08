@@ -75,3 +75,9 @@
     - Create config/locales/id.yml [source](https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale)
     - Modif created_at on forum_threads/index.html.erb, `I18n.l thread.created_at.to_date`
 
+13. Create Thread detail
+    - Create action :show in forum_threads_controller.rb
+    - Create view forum_threads/show.html.erb
+    - Create route for :show
+    - Create forum_posts inside forum_thread
+
