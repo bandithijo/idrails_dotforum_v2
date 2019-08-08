@@ -70,3 +70,8 @@
     - Create with layout partial on app/views/layouts/_nav.html.erb
     - Arrange Navbar like this `[BRAND]-[HOME][ABOUT]---[SEARCHBAR][SEARCHBTN]-[DROPMENUACCOUNT]`
 
+12. Configure Locale with i18n
+    - Add on config/application.rb `config.i18n.default_locale = :id`
+    - Create config/locales/id.yml [source](https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale)
+    - Modif created_at on forum_threads/index.html.erb, `I18n.l thread.created_at.to_date`
+
