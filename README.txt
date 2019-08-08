@@ -66,3 +66,7 @@
     - Create view home/index.html.erb
     - Create route for home#index become to root_path
 
+11. Create Navbar [source](https://getbootstrap.com/docs/4.3/components/navbar/)
+    - Create with layout partial on app/views/layouts/_nav.html.erb
+    - Arrange Navbar like this `[BRAND]-[HOME][ABOUT]---[SEARCHBAR][SEARCHBTN]-[DROPMENUACCOUNT]`
+
