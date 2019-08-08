@@ -1,4 +1,4 @@
-# Rails Daily WokrOut
+# Rails Daily WorkOut
 
 ## Create Forum
 
