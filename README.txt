@@ -11,3 +11,7 @@
     - Install dengan `$ rails g devise:install`
     - Create tabel User `$ rails g devise User`
     - Add column name:string & level:integer to migrate devise_create_user.rb
+
+4. Create database
+    - Run `$ rake db:create`
+    - Run migration `$ rake db:migrate`
