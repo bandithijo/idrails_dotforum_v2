@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Gem added by BanditHijo
 gem 'pry-rails'
 gem 'devise'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

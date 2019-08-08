@@ -2,7 +2,7 @@
 
 ## Create Forum
 
-1. Create new project dengan mysql/postgresql database
+1. Create new project with mysql/postgresql database
 
 2. Add gem pry-rails for switch default irb in rails console
 
@@ -45,3 +45,18 @@
         belongs_to :forum_thread
         ```
 
+8. Create 2 users, 3 forum_threads, 6 forum_posts
+
+9. Install gem bootstrap & gem jquery-rails [source](https://github.com/twbs/bootstrap-rubygem)
+    - Add `gem 'bootstrap'` & `gem 'jquery-rails'` to Gemfile
+    - Add to app/assets/javascripts/application.js
+        ```
+        //= require jquery3
+        //= require popper
+        //= require bootstrap
+        ```
+    - Change application.css to app/assets/stylesheets/application.scss
+        `@import "bootstrap";`
+
+    - Add responsive meta tag [source](https://getbootstrap.com/docs/4.3/getting-started/introduction/#responsive-meta-tag)
+        `<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">`

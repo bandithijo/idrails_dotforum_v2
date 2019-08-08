@@ -19,9 +19,9 @@
 
 # Dummy data for table ForumPosts
 # => ForumPost(id: integer, content: text, forum_thread_id: integer, user_id: integer, created_at: datetime, updated_at: datetime)
-ForumPost.create(content: 'Ijin bergabung, gan!', forum_thread_id: 1, user_id: 2)
-ForumPost.create(content: 'Selamat datang dan selamat bergabung, mas Bro!', forum_thread_id: 1, user_id: 1)
-ForumPost.create(content: 'Terima kasih, gan.', forum_thread_id: 1, user_id: 2)
-ForumPost.create(content: 'Perkenalkan, nama saya Budiman. Asal dari kota Balikpapan.', forum_thread_id: 2, user_id: 2)
-ForumPost.create(content: 'Wah, Ruby on Rails sepertinya menarik juga untuk dipelajari nih.', forum_thread_id: 3, user_id: 2)
-ForumPost.create(content: 'Yoi gan! Saya jug abaru belajar nih.', forum_thread_id: 3, user_id: 1)
+#ForumPost.create(content: 'Ijin bergabung, gan!', forum_thread_id: 1, user_id: 2)
+#ForumPost.create(content: 'Selamat datang dan selamat bergabung, mas Bro!', forum_thread_id: 1, user_id: 1)
+#ForumPost.create(content: 'Terima kasih, gan.', forum_thread_id: 1, user_id: 2)
+#ForumPost.create(content: 'Perkenalkan, nama saya Budiman. Asal dari kota Balikpapan.', forum_thread_id: 2, user_id: 2)
+#ForumPost.create(content: 'Wah, Ruby on Rails sepertinya menarik juga untuk dipelajari nih.', forum_thread_id: 3, user_id: 2)
+#ForumPost.create(content: 'Yoi gan! Saya jug abaru belajar nih.', forum_thread_id: 3, user_id: 1)
