@@ -81,3 +81,24 @@
     - Create route for :show
     - Create forum_posts inside forum_thread
 
+14. Add Counter Cache for stored forum_posts.count in single column
+    - Go to app/models/forum_post.rb, add at the end `belong to :forum_thread, counter_cache: true`
+    - Create migration `$ rails g migration AddForumPostsCountToForumThreads forum_posts_count:integer`
+    - On migration add default: 0
+    - Devide up & down
+        ```
+        def up
+            add_column :forum_threads, :forum_posts_count, default: 0
+
+            ForumThread.all.each do |t|
+                ForumThread.reset_counters(t.id, :forum_posts)
+            end
+        end
+
+        def down
+            remove_column, :forum_threads, :forum_posts_count
+        end
+        ```
+    - Run migration
+    - Change on view, `thread.forum_posts.count` to `thread.forum_posts_count`
+

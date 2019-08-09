@@ -8,6 +8,6 @@
     <span class="meta"><small><%= I18n.l thread.created_at.to_date %> oleh <%= thread.user.name %></small></span>
     <hr>
     <p><%= truncate thread.content, length: 250 %></p>
-    <span><%= thread.forum_posts.count %> obrolan</span>
+    <span><%= thread.forum_posts_count %> obrolan</span>
   </div>
 <% end %>
