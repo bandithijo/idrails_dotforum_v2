@@ -4,7 +4,7 @@
   <p><%= truncate @thread.content, length: 250 %></p>
 </div>
 <div class="comment">
-  <h3 class="ml-md-3">Komentar</h3>
+  <h3 class="ml-3 ml-md-3">Komentar</h3>
   <% if @thread.forum_posts.any? %>
     <% @thread.forum_posts.each do |post| %>
       <div class="comment-list card card-body my-3">
@@ -12,11 +12,11 @@
           <div class="col-md-2">
             <%= image_tag 'profile-placeholder.png', class: 'img-fluid rounded' %>
           </div>
-          <div class="col-md-3 border-right">
+          <div class="col-md-3 mt-2 mt-md-0 border-right">
             <b><%= post.user.name %></b><br>
             <span><small><%= I18n.l post.created_at.to_date %></small></span>
           </div>
-          <div class="col-md-7 pl-5">
+          <div class="col-md-7 pl-md-5">
             <p><%= post.content %></p>
           </div>
         </div>

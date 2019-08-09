@@ -102,3 +102,57 @@
     - Run migration
     - Change on view, `thread.forum_posts.count` to `thread.forum_posts_count`
 
+15. Create form new thread
+    - Create button 'Buath Thread' on view forum_threads#index
+        ```
+        <%= link_to 'Buat Thread', new_forum_thread_path, class: 'btn btn-primary btn-lg btn-block' %>
+        ```
+    - Add :new :create on route resources :forum_threads
+        ```
+        resources :forum_threads, only: [:show, :new, :create]
+        ```
+    - Add action :new & :create
+        ```
+        def new
+            @thread = ForumThread.new
+        end
+
+        def create
+            @thread = forumthread.new(resource_params)
+            @thread.user = user.first (sementara)
+            if @thread.save
+                redirect_to root_path
+            else
+                render 'new'
+            end
+        end
+
+        private
+
+        def resource_params
+            params.require(:forum_thread).permit(:title, :content)
+        end
+        ```
+    - Change action :index fo order by descending
+    - Create view for form_threads/new.html.erb
+    - Add validation for form new thread
+        ```
+        validates :title, presence: true, length: {maximum: 100}
+        validates :content, presence: true
+        ```
+    - Add alert errors on view forum_threads/new.html.erb
+        ```
+        <% if @thread.errors.any? %>
+        <div class="notice">
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <% @thread.errors.full_messages.each do |error| %>
+                    <%= error %><br>
+                <% end %>
+            </div>
+        </div>
+        <% end %>
+        ```
+

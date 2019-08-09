@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Buat Thread Baru</h1>
+  </div>
+  <div class="card-body">
+    <%= form_for @thread do |f| %>
+      <div class="forum-group mb-3">
+        <%= f.label :title, 'Masukkan judul thread:' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="forum-group mb-3">
+        <%= f.label :content, 'Apa yang ingin kamu bahas:' %>
+        <%= f.text_area :content, class: 'form-control', rows: 10 %>
+      </div>
+      <% if @thread.errors.any? %>
+      <div class="notice">
+        <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <% @thread.errors.full_messages.each do |error| %>
+          <%= error %><br>
+        <% end %>
+        </div>
+      </div>
+      <% end %>
+      <div class="forum-group">
+        <%= f.submit 'Publish', class: 'btn btn-primary btn-block' %>
+      </div>
+    <% end %>
+  </div>
+</div>

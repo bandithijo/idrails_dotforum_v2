@@ -1,6 +1,13 @@
 <div class="welcome-msg">
-  <h1>Welcome to dotForum!</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <h1>Welcome to dotForum!</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="col-md-4 my-auto">
+      <%= link_to 'Buat Thread', new_forum_thread_path, class: 'btn btn-primary btn-lg btn-block' %>
+    </div>
+  </div>
 </div>
 <% @threads.each do |thread| %>
   <div class="threads card card-body my-2">
