@@ -103,7 +103,7 @@
     - Change on view, `thread.forum_posts.count` to `thread.forum_posts_count`
 
 15. Create form new thread
-    - Create button 'Buath Thread' on view forum_threads#index
+    - Create button 'Buat Thread' on view forum_threads#index
         ```
         <%= link_to 'Buat Thread', new_forum_thread_path, class: 'btn btn-primary btn-lg btn-block' %>
         ```
@@ -154,5 +154,42 @@
             </div>
         </div>
         <% end %>
+        ```
+
+16. Create form new post
+    - Create controller, app/controllers/forum_posts_controller.rb with action :create
+        ```
+        def create
+            @thread = ForumThread.find(params[:forum_thread_id])
+            @post = ForumPost.new(resource_params)
+
+            @post.forum_thread = @thread
+            @post.user = User.first
+            @post.save
+            redirect_to forum_thread_path(@thread)
+        end
+
+        private
+
+        def resource_params
+            params.require(:forum_post).permit(:content)
+        end
+        ```
+    - Create post route with nested resources
+        ```
+        resources :forum_threads, only: [:show, :new, :create] do
+            resources :forum_posts, only: [:create]
+        end
+        ```
+    - Craete view for forum_posts:create at view forum_threads#show
+        ```
+        <%= form_for [@thread, @post] do |post| %>
+            ...
+            ...
+        <% end %>
+        ```
+    - Add @post at forum_threads#show
+        ```
+        @post = ForumPost.new
         ```
 
