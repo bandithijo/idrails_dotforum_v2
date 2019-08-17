@@ -22,8 +22,9 @@
           Hi! Bro
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to 'Daftar', nil, class: 'dropdown-item' %>
-          <%= link_to 'Login', nil, class: 'dropdown-item' %>
+          <%= link_to 'Daftar', new_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to 'Login', new_user_session_path, class: 'dropdown-item' %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
         </div>
       </li>
     </ul>

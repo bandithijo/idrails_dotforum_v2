@@ -69,6 +69,7 @@
 11. Create Navbar [source](https://getbootstrap.com/docs/4.3/components/navbar/)
     - Create with layout partial on app/views/layouts/_nav.html.erb
     - Arrange Navbar like this `[BRAND]-[HOME][ABOUT]---[SEARCHBAR][SEARCHBTN]-[DROPMENUACCOUNT]`
+    - Set link_to for all menu
 
 12. Configure Locale with i18n
     - Add on config/application.rb `config.i18n.default_locale = :id`
