@@ -195,3 +195,17 @@
         ```
     - Add post validation on model, view and controller
 
+17. Conditional rendering for Navbar using method from devise `user_signed_in?` and object `current_user`
+    ```
+    <%= user_signed_in? ? current_user.name : 'Hello, mas Bro!' %>
+    ```
+
+    ```
+    <% unless user_signed_in? %>
+        <%= link_to 'Daftar', new_user_registration_path, class: 'dropdown-item' %>
+        <%= link_to 'Login', new_user_session_path, class: 'dropdown-item' %>
+    <% else %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+    <% end %>
+    ```
+
