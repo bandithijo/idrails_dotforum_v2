@@ -28,16 +28,16 @@
   <%= form_for [@thread, @post] do |f| %>
   <div class="comment-form">
     <div class="forum-group mb-3">
-      <%= f.label :content, 'Berikan tanggapanmu', class: 'ml-3 ml-md-3' %>
+      <%= f.label :content, 'Berikan tanggapanmu :', class: 'ml-3 ml-md-3' %>
       <%= f.text_area :content, class: 'form-control', rows: 6 %>
     </div>
-    <% if @thread.errors.any? %>
+    <% if @post.errors.any? %>
       <div class="notice">
         <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <% @thread.errors.full_messages.each do |error| %>
+          <% @post.errors.full_messages.each do |error| %>
             <%= error %><br>
           <% end %>
         </div>

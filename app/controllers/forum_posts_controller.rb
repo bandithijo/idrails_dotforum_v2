@@ -5,8 +5,11 @@ class ForumPostsController < ApplicationController
 
     @post.forum_thread = @thread
     @post.user = User.first
-    @post.save
-    redirect_to forum_thread_path(@thread)
+    if @post.save
+      redirect_to forum_thread_path(@thread)
+    else
+      render 'forum_threads/show'
+    end
   end
 
   private

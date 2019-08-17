@@ -192,4 +192,5 @@
         ```
         @post = ForumPost.new
         ```
+    - Add post validation on model, view and controller
 
