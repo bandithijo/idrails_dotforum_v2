@@ -4,9 +4,11 @@
       <h1>Welcome to dotForum!</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
+    <% if user_signed_in? %>
     <div class="col-md-3 my-auto">
       <%= link_to 'Buat Thread', new_forum_thread_path, class: 'btn btn-primary btn-md btn-block' %>
     </div>
+    <% end %>
   </div>
 </div>
 <% @threads.each do |thread| %>

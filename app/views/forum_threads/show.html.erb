@@ -23,29 +23,35 @@
       </div>
     <% end %>
   <% else %>
-    <p class="ml-md-3">Jadilah yang pertama berkomentar.</p>
+    <% if user_signed_in? %>
+      <p class="ml-md-3">Jadilah yang pertama berkomentar.</p>
+    <% end %>
   <% end %>
-  <%= form_for [@thread, @post] do |f| %>
-  <div class="comment-form">
-    <div class="forum-group mb-3">
-      <%= f.label :content, 'Berikan tanggapanmu :', class: 'ml-3 ml-md-3' %>
-      <%= f.text_area :content, class: 'form-control', rows: 6 %>
-    </div>
-    <% if @post.errors.any? %>
-      <div class="notice">
-        <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <% @post.errors.full_messages.each do |error| %>
-            <%= error %><br>
-          <% end %>
+  <% if user_signed_in? %>
+    <%= form_for [@thread, @post] do |f| %>
+      <div class="comment-form">
+        <div class="forum-group mb-3">
+          <%= f.label :content, 'Berikan tanggapanmu :', class: 'ml-3 ml-md-3' %>
+          <%= f.text_area :content, class: 'form-control', rows: 6 %>
+        </div>
+        <% if @post.errors.any? %>
+          <div class="notice">
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <% @post.errors.full_messages.each do |error| %>
+                <%= error %><br>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <div class="forum-group">
+          <%= f.submit 'Publish Komentar', class: 'btn btn-primary btn-block' %>
         </div>
       </div>
     <% end %>
-    <div class="forum-group">
-      <%= f.submit 'Publish', class: 'btn btn-primary btn-block' %>
-    </div>
-  </div>
+  <% else %>
+    <p class="mt-4 text-center">Kamu perlu login untuk dapat berkomentar.</p>
   <% end %>
 </div>

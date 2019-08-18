@@ -19,7 +19,7 @@
     <ul class="navbar-nav ml-2">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= user_signed_in? ? current_user.name : 'Hello, mas Bro!' %>
+          <%= user_signed_in? ? current_user.name : 'Hi, mas Bro!' %>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% unless user_signed_in? %>
