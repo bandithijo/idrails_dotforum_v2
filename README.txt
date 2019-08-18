@@ -61,10 +61,10 @@
     - Add responsive meta tag [source](https://getbootstrap.com/docs/4.3/getting-started/introduction/#responsive-meta-tag)
         `<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">`
 
-10. Create Homepage
-    - Create controller home_controller.rb with action :index
-    - Create view home/index.html.erb
-    - Create route for home#index become to root_path
+10. Create Thread list from database
+    - Create controller forum_threads_controller.rb add action :index
+    - Create view forum_threads/index.html.erb
+    - Change route for root_path to 'forum_threads#index'
 
 11. Create Navbar [source](https://getbootstrap.com/docs/4.3/components/navbar/)
     - Create with layout partial on app/views/layouts/_nav.html.erb
@@ -120,7 +120,7 @@
 
         def create
             @thread = forumthread.new(resource_params)
-            @thread.user = user.first (sementara)
+            @thread.user = current_user
             if @thread.save
                 redirect_to root_path
             else
@@ -165,7 +165,7 @@
             @post = ForumPost.new(resource_params)
 
             @post.forum_thread = @thread
-            @post.user = User.first
+            @post.user = current_user
             @post.save
             redirect_to forum_thread_path(@thread)
         end
@@ -208,4 +208,3 @@
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
     <% end %>
     ```
-

@@ -4,7 +4,7 @@ class ForumPostsController < ApplicationController
     @post = ForumPost.new(resource_params)
 
     @post.forum_thread = @thread
-    @post.user = User.first
+    @post.user = current_user
     if @post.save
       redirect_to forum_thread_path(@thread)
     else
