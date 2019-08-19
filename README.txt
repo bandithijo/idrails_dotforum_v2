@@ -219,3 +219,27 @@
     - For Button and Form on forum_threads:index  `user_signed_in?`
     - For Button and Form on forum_threads:show  `user_signed_in?`
 
+18. Add notice and alert for with bootstrap style [source](https://gist.github.com/fjahr/b3828b9f4e333e74ba1894687d65e055)
+    - Add code below to app/helpers/application_helper.rb
+        ```
+        # for notice alert bootstrap 4
+        def bootstrap_class_for flash_type
+          { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }.stringify_keys[flash_type.to_s] || flash_type.to_s
+        end
+
+        def flash_messages(opts = {})
+          flash.each do |msg_type, message|
+            concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)}", role: "alert") do
+              concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
+              concat message
+            end)
+          end
+          nil
+        end
+        ```
+    - Add code below to app/views/layouts/application.html.erb
+        ```
+          <%= flash_messages %>  <--- add this!
+          <%= yield %>
+        ```
+
