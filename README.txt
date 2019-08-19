@@ -208,7 +208,6 @@
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
     <% end %>
     ```
-<<<<<<< HEAD
     - Add `before_action` on forum_threads_controller.rb
         ```
         before_action :authenticate_user!, only: [:new, :create]
@@ -244,5 +243,3 @@
           <%= yield %>
         ```
 
-=======
->>>>>>> 229a90b6b65678ae5c8265bd9b7d6ce8b0043660
